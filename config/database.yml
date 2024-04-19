@@ -7,9 +7,10 @@
 default: &default
   adapter: postgresql
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  host: localhost
   timeout: 5000
   username: pguser
-  password: 13245768
+  password: 12345678
   # sudo service postgresql restart
 
 development:
