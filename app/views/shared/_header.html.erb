@@ -1,8 +1,7 @@
-<%= button_to "Logout", destroy_user_session_path, method: :delete, class: "btn btn-danger" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    
+    <%= stylesheet_link_tag "main", "data-turbo-track": "reload" %>
 </head>
 <body>
     <header class='header'>
@@ -15,9 +14,18 @@
                 <li class="link">
                     <a href='/films'>Films</a>
                 </li>
+                <li class="link">
+                    <%= link_to 'Search', omdb_search_films_path %>
+                </li>
             </ul>
+            <div>
+                <%= button_to "Logout", destroy_user_session_path, method: :delete, class: "btn btn-danger" %>
+                <%= image_tag(current_user.avatar.variant(:tiny)) if current_user.avatar.attached? %>
+                <%= link_to(current_user.full_name, edit_profile_url) %>    
+            <div/>
         </div>
     </header>
 </body>
 </html>
+
 
