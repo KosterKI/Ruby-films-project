@@ -1,35 +1,40 @@
-<div id="<%= dom_id film %>">
+<div id="<%= dom_id film %>" class="card">
   <% if film.cover_image_url %>
-    <h2><%= image_tag(film.cover_image_url) %></h2>
+    <div class="card-image">
+      <%= image_tag(film.cover_image_url) %>
+    </div>
   <% end %>
-  <p>
-    <strong>Name:</strong>
-    <%= film.name %>
-  </p>
+  <div class="card-content">
+    <p class="card-title">
+      <strong>Name:</strong>
+      <%= film.name %>
+    </p>
 
-  <p>
-    <strong>Description:</strong>
-    <%= film.description %>
-  </p>
+    <p>
+      <strong>Description:</strong>
+      <%= film.description %>
+    </p>
 
-  <p>
-    <strong>Year of creation:</strong>
-    <%= film.year_of_creation %>
-  </p>
+    <p>
+      <strong>Year of creation:</strong>
+      <%= film.year_of_creation %>
+    </p>
 
-  <p>
-    <strong>Director:</strong>
-    <%= film.director %>
-  </p>
+    <p>
+      <strong>Director:</strong>
+      <%= film.director %>
+    </p>
 
-  <p>
-    <strong>Length:</strong>
-    <%= film.length %>
-  </p>
+    <p>
+      <strong>Length:</strong>
+      <%= film.length %>
+    </p>
 
-  <p>
-    <strong>Genres:</strong>
-    <%= film.genres.filter_map { |g| g.titleize if g.present? }.join(', ') %>
-  </p>
-
+    <p>
+      <strong>Genres:</strong>
+      <%= film.genres.filter_map { |g| g.titleize if g.present? }.join(', ') %>
+    </p>
+  </div>
 </div>
+
+<div id="<%= dom_id film %>">

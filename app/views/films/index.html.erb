@@ -1,4 +1,4 @@
-<p style="color: green"><%= notice %></p>
+<p class="success"><%= notice %></p>
 
 <h1>Films</h1>
 
@@ -11,11 +11,12 @@
       <h3 class="name">
         <%= film.name %>
       </h3>
-      <button class="show">
+      <button class="btn show">
         <%= link_to "Show this film", film %>
       </button>
     </li>
   <% end %>
 </ul>
 
-<%= link_to "New film", new_film_path %>
+<%= link_to "New film", new_film_path, class: "btn" %>
+

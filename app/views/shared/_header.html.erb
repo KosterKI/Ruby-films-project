@@ -2,6 +2,34 @@
 <html lang="en">
 <head>
     <%= stylesheet_link_tag "main", "data-turbo-track": "reload" %>
+    <style>
+        .top-right {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+        .header .container  .btn {
+            width: 100%;
+            max-width: 150px;
+            display: block;
+        }
+        .header .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .header .container .links {
+            display: flex;
+            gap: 20px;
+        }
+        .header .container .links .link a {
+            color: #000;
+        }
+        .header .container .class {
+            display: block;
+            margin-right: 100px;
+        }
+    </style>
 </head>
 <body>
     <header class='header'>
@@ -18,14 +46,14 @@
                     <%= link_to 'Search', omdb_search_films_path %>
                 </li>
             </ul>
-            <div>
-                <%= button_to "Logout", destroy_user_session_path, method: :delete, class: "btn btn-danger" %>
+            <div class="class">
                 <%= image_tag(current_user.avatar.variant(:tiny)) if current_user.avatar.attached? %>
                 <%= link_to(current_user.full_name, edit_profile_url) %>    
+            <div/>
+            <div>
+                <%= button_to "Logout", destroy_user_session_path, method: :delete, class: "btn btn-danger top-right" %>
             <div/>
         </div>
     </header>
 </body>
 </html>
-
-
